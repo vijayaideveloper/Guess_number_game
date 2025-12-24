@@ -1,5 +1,7 @@
 # Guess_number_game
 # 🎲 Number Guessing Game (Flask Web App)
+# Game link
+link:https://guess-number-game-eqgj.onrender.com/
 
 A simple, interactive web-based number guessing game built using **Python**, **Flask**, **HTML**, and **CSS**. This project converts a traditional command-line Python game into a fully functional web application with session management and a responsive UI.
 
