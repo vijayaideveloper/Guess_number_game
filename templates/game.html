@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing - Number Guessing Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="scoreboard">
+            <span>Round: {{ round }} / {{ total }}</span>
+            <span>Score: {{ score }}</span>
+        </div>
+
+        {% if message %}
+        <div class="result-box {{ result_class }}">
+            <h2>{{ message }}</h2>
+            <p>You: <strong>{{ user_guess }}</strong> | Computer: <strong>{{ computer_val }}</strong></p>
+        </div>
+        {% endif %}
+
+        {% if not game_over %}
+            <form method="POST">
+                <label for="guess">Enter Your Guess (1-10):</label>
+                <input type="number" id="guess" name="guess" min="1" max="10" required autofocus>
+                <button type="submit">Submit Guess</button>
+            </form>
+        {% else %}
+            <div class="game-over">
+                <h2>Game Over!</h2>
+                <h3>Total Points: {{ score }}</h3>
+                <a href="/" class="btn-restart">Play Again</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
